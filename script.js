@@ -54,22 +54,111 @@ function checkFizzBuzz(number) {
     else return number
 }
 
-console.log(checkFizzBuzz(1))
-console.log(checkFizzBuzz(2))
-console.log(checkFizzBuzz(3))
-console.log(checkFizzBuzz(4))
-console.log(checkFizzBuzz(5))
-console.log(checkFizzBuzz(6))
-console.log(checkFizzBuzz(7))
-console.log(checkFizzBuzz(8))
-console.log(checkFizzBuzz(9))
-console.log(checkFizzBuzz(10))
-console.log(checkFizzBuzz(11))
-console.log(checkFizzBuzz(12))
-console.log(checkFizzBuzz(13))
-console.log(checkFizzBuzz(14))
-console.log(checkFizzBuzz(15))
-console.log(checkFizzBuzz(16))
-console.log(checkFizzBuzz(17))
-console.log(checkFizzBuzz(18))
-console.log(checkFizzBuzz(19))
+
+
+/* 
+2.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn en string som parameter og returnere stringen
+i STORE BOKSTAVER med et utropstegn på slutten.
+
+Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
+*/
+
+function toUpperCase(text) {
+    if (text.endsWith("!")) {
+        return text.toUpperCase() 
+    }
+    else {
+        return text.toLowerCase()
+    }
+//return text.toUpperCase() + "!"
+}
+
+// console.log(toUpperCase("Dette er kult!"))
+
+/* 
+3.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn 2 parametere:
+
+ - Et navn (string)
+ - En time på døgnet (nummer)
+
+Funksjonen skal returnere:
+"Ugyldig tid" hvis timeverdien er mindre enn 0.
+"God natt (mottatt navn)" hvis timeverdien er mellom 0 og 5.
+"God morgen (mottatt navn)" hvis timeverdien er mellom 6 og 11.
+"God dag (mottatt navn)" hvis timeverdien er mellom 12 og 17.
+"God kveld (mottatt navn)" hvis timeverdien er mellom 18 og 23.
+"Ugyldig tid" hvis timeverdien er større enn 23.
+
+Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
+*/
+
+function greet(name, time) {
+    if (time < 0 || time > 23) return "Ugyldig tid"
+
+    else if (time >= 0 && time <= 5) return "God natt " + name
+    else if (time >= 6 && time <= 11) return "God morgen " + name
+    else if (time >= 12 && time <= 17) return "God dag " + name
+    else if (time >= 18 && time <= 23) return "God kveld " + name
+    return "OOPS, noe gikk galt!"
+}
+
+function greetToo(name, time) {
+  return (time < 0 || time > 23) ? "Ugyldig tid"
+    : (time <= 5) ? "God natt " + name
+    : (time <= 11) ? "God morgen " + name
+    : (time <= 17) ? "God dag " + name
+    : (time <= 23) ? "God kveld " + name
+    : "OOPS, noe gikk galt!";
+}
+
+// console.log(greetToo("Patryk", 6))
+
+/* 
+4.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn en array som parameter og returnere arrayen
+med første og siste indeks fjernet.
+
+Eksempel 1: ["Rød", "Grønn", "Blå", "Gul"] skal returnere ["Grønn", "Blå"].
+
+Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
+["To", "Tre", "Fire", "Fem"].
+*/
+
+
+function trimArray(array) {
+
+    return array.slice(1,-1)
+}
+
+function trimArrayToo(array) {
+    array.pop()
+    array.shift()
+    return array
+}
+
+let myArray = ["Rød", "Grønn", "Blå", "Gul"]
+
+// myArray.shift() // fjerner "Rød"
+
+// console.log(myArray)
+
+// myArray.pop() // fjerner "Gul"
+
+//console.log(myArray)
+
+// let newArray = myArray.slice(1, -1)
+
+//console.log(newArray)
+
+console.log(trimArrayToo(myArray))
