@@ -313,8 +313,30 @@ const evenMoreNames = [
 
 // skriv ut annenhver navn i konsollen
 
-for (let index = evenMoreNames.length - 1; index >= 0; index -= 2) {
-    const element = evenMoreNames[index];
-    
-    console.log(element)
+// for (index eller start positon ; condition ; interation operation) {
+
+//}
+
+for (let counter = 5; counter < 51; counter += 5) {
+    // console.log(counter)
 }
+
+
+// while loop
+
+let score = 1;
+let currentRoll;
+
+function rollDice() {
+  return Math.floor(Math.random() * 6) + 1; // 1..6
+}
+
+while (false) {
+    currentRoll = rollDice()
+ 
+    score += currentRoll
+
+    console.log(rollDice())
+}
+
+console.log(score)
