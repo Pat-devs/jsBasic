@@ -252,7 +252,6 @@ const oldItems = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
 
 
-
 let userObject = {
     name: "Per",
     age: 18
@@ -284,6 +283,38 @@ const moreNames = [
 
 // vanlig for loop :)
 
-for (let counter = 2; counter <= 10; counter += 2) {
-    console.log(counter)
+// names array: ["Tom", "Eric", "Jessica"];
+
+for (let index = 0; index < names.length; index += 1) {
+    const element = names[index]
+
+    if (element === "Eric") continue
+
+    // console.log("Name at " + index + " is " + element)
+}
+
+
+const evenMoreNames = [
+  "Tom",
+  "Eric",
+  "Jessica",
+  "Scott",
+  "Anna",
+  "Carl",
+  "Elisabeth",
+  "Benny",
+  "Oliver",
+  "Andy",
+  "Jenny",
+  "Ashley",
+  "Erin",
+  "Patrick",
+];
+
+// skriv ut annenhver navn i konsollen
+
+for (let index = evenMoreNames.length - 1; index >= 0; index -= 2) {
+    const element = evenMoreNames[index];
+    
+    console.log(element)
 }
