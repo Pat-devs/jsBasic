@@ -186,5 +186,49 @@ function updateText(text) {
     return text.trim().replaceAll("vanskelig", "gøy")
 }
 
-console.log(updateText("  Alt er vanskelig gil å begynne med, Javascript er vanskelig   "))
+// console.log(updateText("  Alt er vanskelig gil å begynne med, Javascript er vanskelig   "))
 
+/* 
+6.
+
+Fullfør følgende steg for å manipulere "items"-arrayet. Hvert steg skal
+fullføres ved å bruke passende array-metoder.
+
+*******************************************************************************/
+
+const items = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+
+/*******************************************************************************
+Steg 1: Fjern det første elementet ("Bok") fra arrayen ved hjelp av riktig metode.
+
+Steg 2: Finn og erstatt "Viskelær" med "Linjal" i arrayen.
+
+Steg 3: Bruk splice-metoden til å fjerne både "Penn" og "Notatbok", og legg til "Markeringspenn" i deres plass.
+
+Steg 4: Kombiner alle elementene i arrayen til en enkelt string ved å bruke " | " som separator.
+
+Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder bokstaven "e".
+*/
+
+items.shift()
+
+// console.log(items) // ["Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+
+// Steg 2a: Finn "Viskelær"
+const viskelærIndex = items.indexOf("Viskelær")
+
+// Steg 2b: ersatt med "Linjal"
+
+items[viskelærIndex] = "Linjal"
+
+// console.log(items) // ['Penn', 'Notatbok', 'Linjal', 'Blyant', 'Markør']
+
+// Steg 3: Bruk splice-metoden til å fjerne både "Penn" og "Notatbok", og legg til "Markeringspenn" i deres plass.
+
+items.splice(0, 2, "Markeringspenn") // første argument (0) er index, andre argument (2) er antall
+
+console.log(items)
+
+// Steg 4: Kombiner alle elementene i arrayen til en enkelt string ved å bruke " | " som separator.
+
+console.log(items.join(" | "))
