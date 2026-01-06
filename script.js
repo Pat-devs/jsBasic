@@ -251,15 +251,9 @@ const names = ["Tom", "Eric", "Jessica"];
 const oldItems = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
 for (const element of oldItems) {
-    break
+    if (element === "Penn" || element === "Blyant") continue // to skip an element
     console.log(element)
+
     
-    if (element === "Notatbok") break // break stopper loopen
-}
-
-
-let text = "Notatbok"
-
-for (const element of text) {
-    console.log(element)
+    // if (element === "Notatbok") break // break stopper loopen
 }
