@@ -161,4 +161,30 @@ let myArray = ["Rød", "Grønn", "Blå", "Gul"]
 
 //console.log(newArray)
 
-console.log(trimArrayToo(myArray))
+// console.log(trimArrayToo(myArray))
+
+/*
+5.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn en string som parameter.
+
+Bruk stringmetoder på stringen for å gjøre følgende:
+ - Erstatt ordet "vanskelig" med "gøy".
+ - Fjern mellomrom fra starten og slutten av stringen.
+
+Returner deretter den oppdaterte stringen.
+
+Eksempel 1: "  Javascript er vanskelig   " skal returnere "Javascript er gøy".
+Eksempel 2: " Det er vanskelig å bruke metoder " skal returnere "Det er gøy å bruke metoder".
+Eksempel 3: "   vanskelig        " skal returnere "gøy".
+*/
+
+function updateText(text) {
+
+    return text.trim().replaceAll("vanskelig", "gøy")
+}
+
+console.log(updateText("  Alt er vanskelig gil å begynne med, Javascript er vanskelig   "))
+
