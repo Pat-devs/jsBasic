@@ -227,8 +227,39 @@ items[viskelærIndex] = "Linjal"
 
 items.splice(0, 2, "Markeringspenn") // første argument (0) er index, andre argument (2) er antall
 
-console.log(items)
+// console.log(items)
 
 // Steg 4: Kombiner alle elementene i arrayen til en enkelt string ved å bruke " | " som separator.
 
-console.log(items.join(" | "))
+// console.log(items.join(" | "))
+
+const names = ["Tom", "Eric", "Jessica"];
+
+// oppgave: skriv ut alle navn, en på hver linje
+
+// console.log(names[0])
+// console.log(names[1])
+// console.log(names[2])
+
+// Loops ((Løkker på norsk))
+
+// for (let index = 0; index < array.length; index++) {
+//    const element = array[index];
+//    
+//}
+
+const oldItems = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+
+for (const element of oldItems) {
+    break
+    console.log(element)
+    
+    if (element === "Notatbok") break // break stopper loopen
+}
+
+
+let text = "Notatbok"
+
+for (const element of text) {
+    console.log(element)
+}
