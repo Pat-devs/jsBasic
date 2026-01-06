@@ -250,10 +250,41 @@ const names = ["Tom", "Eric", "Jessica"];
 
 const oldItems = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
-for (const element of oldItems) {
-    if (element === "Penn" || element === "Blyant") continue // to skip an element
-    console.log(element)
 
-    
-    // if (element === "Notatbok") break // break stopper loopen
+
+
+let userObject = {
+    name: "Per",
+    age: 18
+}
+
+// console.log(userObject)
+
+
+const moreNames = [
+    {
+    name: "Per",
+    age: 18
+    },
+    {
+    name: "Tom",
+    age: 15
+    },
+    {
+    name: "Tom",
+    age: 33
+    },
+    {
+        name: "Jessica",
+        age: 44
+    }
+];
+
+// console.log(moreNames[0].age)
+
+for (const element of moreNames) {
+ 
+    if (element.name === "Tom" && element.age < 18) continue
+
+    console.log("Hi " + element.name + ", you are " + element.age + " years old.")
 }
