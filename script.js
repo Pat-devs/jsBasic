@@ -282,9 +282,8 @@ const moreNames = [
 
 // console.log(moreNames[0].age)
 
-for (const element of moreNames) {
- 
-    if (element.name === "Tom" && element.age < 18) continue
+// vanlig for loop :)
 
-    console.log("Hi " + element.name + ", you are " + element.age + " years old.")
+for (let counter = 2; counter <= 10; counter += 2) {
+    console.log(counter)
 }
