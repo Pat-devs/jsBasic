@@ -32,3 +32,41 @@ console.log(numbersIdElement)
 h1Element.textContent = 'Javascript' // to change or remove text
 
 paragraphElement.innerHTML = `<b>Hei</b>` // innerHTML allows us to create html tags with javascript
+
+
+let users = [
+  "Tom",
+  "Eric",
+  "Jessica",
+  "Scott",
+  "Anna",
+  "Carl",
+  "Elisabeth",
+  "Benny",
+  "Oliver",
+  "Andy",
+  "Jenny",
+  "Ashley",
+  "Erin",
+  "Patrick",
+];
+
+let noeText = "Hei"
+noeText += " og hadet!"
+
+console.log(noeText)
+
+
+document.body.innerHTML += `<p>${noeText}</p>`
+
+
+
+// select the div container
+
+containerElement = document.querySelector(".container")
+
+
+for (const user of users) {
+    
+    containerElement.innerHTML += `<li>${user}</li>`
+}
