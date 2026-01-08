@@ -14,3 +14,21 @@ console.log(h1Element)
 let paragraphElement = document.querySelector("p")
 
 console.log(paragraphElement)
+
+// 2. How to select elements by class name ?
+
+let numbersClassElement = document.querySelector(".numbers")
+
+console.log(numbersClassElement)
+
+// 3. How to select element by id ?
+
+let numbersIdElement = document.querySelector("#numbers")
+
+console.log(numbersIdElement)
+
+
+// how to change an element ?
+h1Element.textContent = 'Javascript' // to change or remove text
+
+paragraphElement.innerHTML = `<b>Hei</b>` // innerHTML allows us to create html tags with javascript
