@@ -1,147 +1,66 @@
-// Oppgavesett #3 - Loops & Objects
-// Oppgave #1 
-const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
-const people = [
-	{
-		name: "Thomas",
-		male: true,
-		age: 23,
-		hobbies: ["cycling", "football", "pool"]
-	},
-	{
-		name: "Susan",
-		male: false,
-		age: 26,
-		hobbies: ["jogging", "travelling", "dancing"]
-	},
-	{
-		name: "Monica",
-		male: false,
-		age: 21,
-		hobbies: ["skateboarding", "guitar", "concerts"]
-	},
-	{
-		name: "Avery",
-		male: true,
-		age: 28,
-		hobbies: ["writing", "games", "memes"]
-	},
-	{
-		name: "Phillip",
-		male: true,
-		age: 24,
-		hobbies: ["boxing", "wrestling", "mma"]
-	},
-	{
-		name: "Otto",
-		male: true,
-		age: 36,
-		hobbies: ["movies", "cinema", "music"]
-	},
-	{
-		name: "Annabelle",
-		male: false,
-		age: 30,
-		hobbies: ["makeup", "fashion", "shopping"]
-	},
-	{
-		name: "Cathy",
-		male: false,
-		age: 18,
-		hobbies: ["design", "drawing", "css"]
-	}
-];
-let combinedAge = 0;
-let averageAge = 0;
+// lag en ny nøkkel (key) i person objektet...
+ Math.ceil(Math.random() * [].length - 1)
+
+
 
 /* 
-Bruk en vanlig 'for-løkke' til å iterere gjennom `people`-arrayet og utfør følgende:
+2.
 
-- Hvis objektets `name`-verdi er "Otto", skal ingen av endringene nedenfor gjøres 
-  på det objektet (hint: bruk `continue`-nøkkelordet).
+Lag følgende funksjon:
 
-- Lag en ny nøkkel på hvert person-objekt i arrayet kalt "city" og sett verdien
-  til en random by fra `cities`-arrayen.
+Funksjonen skal ta inn ett tall som parameter.
 
-- Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for
-  menn og "Ms." for kvinner.
-	
-- Øk alderen med 2.
+Funksjonen skal returnere et array med tilfeldige tall mellom 1 og 6.
+Lengden på arrayet bestemmes av tallet som funksjonen mottar som parameter
+(tenk på det som antall terninger vi kaster).
 
-- Legg til "coding" i begynnelsen av hobby-arrayet i hvert objekt.
+Eksempler: 
+diceRoller(4) skal returnere noe som: [4, 1, 2, 6]
+diceRoller(6) skal returnere noe som: [5, 5, 6, 2, 3, 4]
 
-**PS**: Bruk kun én løkke for å gjøre alle de ovennevnte stegene.
-
-Bruk `console.log(people)` etter løkken for å sjekke at endringene er riktige.
-
-Bruk løkken din til å regne ut den kombinerte alderen til alle person-objektene 
-og lagre det i variabelen `combinedAge`.
-
-Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
-for alle, og lagre det i variabelen `averageAge`.
-
-Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
+Legg til en andre parameter i funksjonen som bestemmer hvor mange sider terningen skal ha.
+diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 */
 
-for (let index = 0; index < people.length; index++) {
-    // current person
-    const person = people[index];
-
-    // a) Skip Otto:
-    if (person.name === "Otto") {
-        continue;
-    }
-
-    // b) - Lag en ny nøkkel på hvert person-objekt i arrayet kalt "city" og sett verdien til en random by fra `cities`-arrayen.
-
-
-    // lag en ny nøkkel (key) i person objektet...
-    const randomCityIndex = Math.ceil(Math.random() * cities.length - 1)
-    person.city = cities[randomCityIndex];
-
-    // c) - Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for menn og "Ms." for kvinner.
-
-   
-    // ternary operator ? :
-    person.title = (person.male === true) ? "Mr." : "Ms." 
-    // Above statment does the same as: 
-    /* 
-    // Check if person is male or female
-    if (person.male === true) {
-        person.title = "Mr."
-    } else {
-        person.title = "Ms."
-    }
-    */
-
-    // update age with +2
-    person.age += 2;
-    // Same as:  person.age = person.age + 2
-
-    // add "Coding" as hobby to each person
-
-    person.hobbies.unshift("coding");
-
-    combinedAge = combinedAge + person.age
-    // same as: combinedAge += person.age
-
-
-    //console.table(person);
+// function returns a random number between 1-6
+function randomDice (sides) {
+    return 1 + Math.floor(Math.random() * sides)
 }
 
-//console.table(people)
+// function takes a count as parameter, and returns an array that equal is length
+// each element in the array is a ranndom number between 1-6
+function diceRoller(count) {
+    const myArray = []
 
-console.log("Combined age is: " + combinedAge)
+    for (let index = 0; index < count; index++) {
+        
+        myArray.push(randomDice(6))
+        
+    }
+    return myArray
+}
 
-/* 
-Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
-for alle, og lagre det i variabelen `averageAge`.
 
-Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
-*/
+// console.log(diceRoller(60))
 
-// 
-averageAge = combinedAge / (people.length - 1) // length -1 because otto is not included in the combiend age
+// example how to avoid duplicates when adding random elements ...
 
-console.log(averageAge)
+const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
+
+const myTrip = []
+
+while (true) {
+    const randomCity = cities[Math.floor(Math.random() * cities.length)]
+    if (myTrip.indexOf(randomCity) >= 0) {
+        console.error("not going to " + randomCity + " again!")
+        break
+    }
+    else myTrip.push(randomCity)
+
+    console.warn("Going to " + randomCity)
+}
+
+console.log("My trip was...")
+
+console.table(myTrip)
