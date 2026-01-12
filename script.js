@@ -1,5 +1,4 @@
 // Oppgavesett #3 - Loops & Objects
-
 // Oppgave #1 
 const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
@@ -103,21 +102,46 @@ for (let index = 0; index < people.length; index++) {
 
     // c) - Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for menn og "Ms." for kvinner.
 
+   
+    // ternary operator ? :
+    person.title = (person.male === true) ? "Mr." : "Ms." 
+    // Above statment does the same as: 
+    /* 
     // Check if person is male or female
     if (person.male === true) {
         person.title = "Mr."
     } else {
         person.title = "Ms."
     }
-    
-    console.log(person);
+    */
+
+    // update age with +2
+    person.age += 2;
+    // Same as:  person.age = person.age + 2
+
+    // add "Coding" as hobby to each person
+
+    person.hobbies.unshift("coding");
+
+    combinedAge = combinedAge + person.age
+    // same as: combinedAge += person.age
+
+
+    //console.table(person);
 }
 
-console.log("Random number...")
+//console.table(people)
 
-console.log(Math.floor(Math.random() * cities.length))
+console.log("Combined age is: " + combinedAge)
 
+/* 
+Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
+for alle, og lagre det i variabelen `averageAge`.
 
-// Math.random, gir aldri 1.0 lll 0.00000001 - 0.99999999 
+Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
+*/
 
-console.log(Math.ceil(5.9999999) - 1)
+// 
+averageAge = combinedAge / (people.length - 1) // length -1 because otto is not included in the combiend age
+
+console.log(averageAge)
