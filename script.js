@@ -1,66 +1,23 @@
-
-// lag en ny nøkkel (key) i person objektet...
- Math.ceil(Math.random() * [].length - 1)
-
-
-
-/* 
-2.
+/*
+3.
 
 Lag følgende funksjon:
 
-Funksjonen skal ta inn ett tall som parameter.
+Funksjonen skal ta inn ett array av strings som parameter.
 
-Funksjonen skal returnere et array med tilfeldige tall mellom 1 og 6.
-Lengden på arrayet bestemmes av tallet som funksjonen mottar som parameter
-(tenk på det som antall terninger vi kaster).
+Inne i funksjonen, gjør følgende:
 
-Eksempler: 
-diceRoller(4) skal returnere noe som: [4, 1, 2, 6]
-diceRoller(6) skal returnere noe som: [5, 5, 6, 2, 3, 4]
+Skriv en løkke som itererer gjennom stringene i arrayet, og gjør følgende:
+- Fjern mellomrom fra starten og slutten av hvert ord.
+- Gjør alle ordene om til små bokstaver.
 
-Legg til en andre parameter i funksjonen som bestemmer hvor mange sider terningen skal ha.
-diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
+Bruk en "for...of"-løkke.
+
+Etter løkken, bruk en metode for å sette sammen arrayet til en enkelt string 
+med et enkelt mellomrom mellom ordene (" "), og returner den resulterende stringen.
+
+Eksempel:
+[" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"]
+skal returnere:
+"this text needs to be cleaned up"
 */
-
-// function returns a random number between 1-6
-function randomDice (sides) {
-    return 1 + Math.floor(Math.random() * sides)
-}
-
-// function takes a count as parameter, and returns an array that equal is length
-// each element in the array is a ranndom number between 1-6
-function diceRoller(count) {
-    const myArray = []
-
-    for (let index = 0; index < count; index++) {
-        
-        myArray.push(randomDice(6))
-        
-    }
-    return myArray
-}
-
-
-// console.log(diceRoller(60))
-
-// example how to avoid duplicates when adding random elements ...
-
-const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
-
-const myTrip = []
-
-while (true) {
-    const randomCity = cities[Math.floor(Math.random() * cities.length)]
-    if (myTrip.indexOf(randomCity) >= 0) {
-        console.error("not going to " + randomCity + " again!")
-        break
-    }
-    else myTrip.push(randomCity)
-
-    console.warn("Going to " + randomCity)
-}
-
-console.log("My trip was...")
-
-console.table(myTrip)
