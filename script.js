@@ -21,3 +21,32 @@ Eksempel:
 skal returnere:
 "this text needs to be cleaned up"
 */
+
+
+function cleanUp(array) {
+    let outputText = ""
+
+    // loop through the array
+    for (const word of array) {
+        outputText += " " + word.trim()
+    }
+    outputText = outputText.trim().toLowerCase()
+    
+    return outputText
+}
+
+
+let exampleArray = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"]
+
+// console.log(cleanUp(exampleArray))
+
+function cleanUp2(array) {
+    const outputText = []
+    for (const word of array) {
+        outputText.push( word.trim().toLowerCase() )
+    }
+
+    return outputText.join(" ")
+}
+
+console.log(cleanUp2(exampleArray))
