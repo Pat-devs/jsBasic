@@ -1,52 +1,29 @@
-/*
-3.
+/*4.
 
-Lag følgende funksjon:
+Fullfør funksjonen nedenfor for å oppnå følgende:
 
-Funksjonen skal ta inn ett array av strings som parameter.
+Returner stringen som mottas i første parameter med følgende endringer:
 
-Inne i funksjonen, gjør følgende:
+Hver bokstav i stringen som matcher `charA` (andre parameteret) skal erstattes 
+med `charB` (tredje parameteret), og VICE VERSA - det vil si at bokstaver som 
+matcher `charA` skal byttes med `charB`, og bokstaver som matcher `charB` skal 
+byttes med `charA`.
 
-Skriv en løkke som itererer gjennom stringene i arrayet, og gjør følgende:
-- Fjern mellomrom fra starten og slutten av hvert ord.
-- Gjør alle ordene om til små bokstaver.
+Eksempler:
 
-Bruk en "for...of"-løkke.
+doubleSwap("this is a string", "i", "s")
+skal returnere "thsi si a itrsng"
 
-Etter løkken, bruk en metode for å sette sammen arrayet til en enkelt string 
-med et enkelt mellomrom mellom ordene (" "), og returner den resulterende stringen.
+doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")
+skal returnere "maybe another approach is necessary"
 
-Eksempel:
-[" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"]
-skal returnere:
-"this text needs to be cleaned up"
+doubleSwap("what is the point of this?", "o", "t")
+skal returnere "whao is ohe ptino tf ohis?"
+
 */
 
-
-function cleanUp(array) {
-    let outputText = ""
-
-    // loop through the array
-    for (const word of array) {
-        outputText += " " + word.trim()
-    }
-    outputText = outputText.trim().toLowerCase()
-    
-    return outputText
+function doubleSwap(string, charA, charB) {
+	// Skriv koden for oppgave 4 her
 }
 
-
-let exampleArray = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"]
-
-// console.log(cleanUp(exampleArray))
-
-function cleanUp2(array) {
-    const outputText = []
-    for (const word of array) {
-        outputText.push( word.trim().toLowerCase() )
-    }
-
-    return outputText.join(" ")
-}
-
-console.log(cleanUp2(exampleArray))
+doubleSwap("this is a string", "i", "s") // skal returnere "thsi si a itrsng"
