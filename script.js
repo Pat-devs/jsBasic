@@ -24,6 +24,30 @@ skal returnere "whao is ohe ptino tf ohis?"
 
 function doubleSwap(string, charA, charB) {
 	// Skriv koden for oppgave 4 her
+
+    let output = ""
+
+    for (let letter of string) {
+
+        if (letter == charA) {
+            letter = charB
+            output += letter
+        }
+        else if (letter == charB) {
+            letter = charA
+            output += letter
+        }
+        else {
+            output += letter
+        }
+    }
+
+    return output
+    // return string.replaceAll(charA, charB)
 }
 
-doubleSwap("this is a string", "i", "s") // skal returnere "thsi si a itrsng"
+
+console.log(doubleSwap("this is a string", "i", "s")) // skal returnere "thsi si a itrsng"
+
+console.log(doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")) // maybe another approach is necessary"
+
